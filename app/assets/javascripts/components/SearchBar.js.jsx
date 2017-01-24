@@ -14,6 +14,7 @@ class SearchBar extends React.Component {
       type: 'get',
       success: (response) => {
         this.props.searchCallback(response);
+        this.setState({code: ''});
       }
     });
   }

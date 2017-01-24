@@ -5,6 +5,7 @@ class StockInfo extends React.Component {
     this.state = {quantity: '', total: 0};
     this.setQuantity = this.setQuantity.bind(this);
     this.formattedTotal = this.formattedTotal.bind(this);
+    this.buyStock = this.buyStock.bind(this);
   }
 
   setQuantity(event) {
@@ -12,9 +13,22 @@ class StockInfo extends React.Component {
     this.setState({quantity: event.target.value, total: total});
 
   }
+  buyStock() {
+    $.ajax({
+      url: '/stocks',
+      contentType: 'application/json',
+      type: 'post',
+      data: JSON.stringify({code: this.props.stock.code,
+        quantity: this.state.quantity}),
+      success: (response) => {
+        console.log(response);
+
+      }
+    });
+  }
 
   formattedTotal() {
-    return this.state.total > 0 ? `R$${this.state.total.toFixed(2)}` : `R$ 0.00`
+    return this.state.total > 0 ? `R$${this.state.total.toFixed(2)}` : `R$ 0.00`;
   }
 
   render() {
@@ -32,8 +46,8 @@ class StockInfo extends React.Component {
           <div className="total ui segment">
             <p>{this.formattedTotal()}</p>
           </div>
-          <button className="ui big green button" style={{"margin-left": "5px",
-          "height": "49px"}}>Buy</button>
+          <button className="ui big green button" style={{"marginLeft": "5px",
+          "height": "49px"}} onClick={this.buyStock}>Buy</button>
         </div>
     )
   }

@@ -1,0 +1,34 @@
+
+.stock-info {
+  padding: 20px 10px 0px 0px;
+  width: 650px;
+
+  .info {
+    width: 200px;
+    display: inline-block;
+
+    p {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    span {
+      display: inline-block;
+      margin: 0 30px;
+    }
+
+  }
+
+  .quantity {
+    display: inline-block;
+    width: 90px;
+    height: 49px;
+    margin: 0 5px;
+  }
+
+  .total {
+    display: inline-block;
+  }
+
+
+}
