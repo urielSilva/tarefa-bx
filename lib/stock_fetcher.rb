@@ -9,6 +9,7 @@ class StockFetcher
     response =  Net::HTTP::get_response(url)
     #removing // from the response
     parse_response(response)
+
   end
 
   private
