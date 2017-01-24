@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
       url: `/stocks/${this.state.code}`,
       type: 'get',
       success: (response) => {
-        console.log(response);
+        this.props.searchCallback(response);
       }
     });
   }
