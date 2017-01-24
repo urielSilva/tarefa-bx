@@ -21,8 +21,7 @@ class StockInfo extends React.Component {
       data: JSON.stringify({code: this.props.stock.code,
         quantity: this.state.quantity}),
       success: (response) => {
-        console.log(response);
-
+        this.props.purchaseCallback(response);
       }
     });
   }
