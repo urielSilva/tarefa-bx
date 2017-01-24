@@ -2,7 +2,7 @@ class StocksController < ApplicationController
   require 'stock_fetcher'
 
   def index
-    @stocks = Stock.all
+    render json: Stock.all
   end
   def create
     stock = Stock.new(stock_params)
