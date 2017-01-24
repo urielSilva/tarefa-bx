@@ -16,4 +16,5 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require semantic-ui
 //= require_tree .
