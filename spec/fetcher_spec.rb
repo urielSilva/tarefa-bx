@@ -5,7 +5,7 @@ require 'stock_fetcher'
 RSpec.describe 'Stock Fetcher' do
   it 'fetches a stock from a given code' do
     code = 'PETR4'
-    expect(StockFetcher.fetch(code)).to_not be_empty
+    expect(StockFetcher.fetch(code)).to_not be_nil
   end
 
   it 'returns nil when the code is not found' do

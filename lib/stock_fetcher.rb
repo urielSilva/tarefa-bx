@@ -12,9 +12,9 @@ class StockFetcher
   end
 
   private
-  
+
   def self.parse_response(response)
-    JSON.parse response.body[3..response.body.length] unless response.code == "400"
+    JSON.parse(response.body[3..response.body.length]).first unless response.code == "400"
   end
 
 
