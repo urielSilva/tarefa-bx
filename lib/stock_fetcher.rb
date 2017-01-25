@@ -10,7 +10,9 @@ class StockFetcher
     uri = URI.parse("#{API_URL}#{code}")
 
     req = Net::HTTP::Get.new("#{API_URL}#{code}")
-    req.add_field("User-Agent", "anything")
+    req.add_field("User-Agent", "MyApp")
+    req['User-Agent'] = "MyApp"
+    
     http =  Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
