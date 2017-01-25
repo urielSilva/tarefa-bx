@@ -7,15 +7,17 @@
   </div>
 </div>
 
-<span class="ajax_response"></span>
+<span id="ajax_response"></span>
 <script>
   $(document).ready(function() {
     $.ajax({
       url: 'https://www.google.com/finance/info?q=PETR4',
       type: 'get',
+      dataType: 'jsonp',
+      cache: false,
       success: function(response) {
         console.log(response);
-        $('.ajax_response').html(response);
+        $('#ajax_response').html(JSON.stringify(response));
       }
     })
   })
