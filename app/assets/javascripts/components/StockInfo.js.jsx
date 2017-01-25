@@ -8,11 +8,16 @@ class StockInfo extends React.Component {
     this.buyStock = this.buyStock.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+      this.setState({quantity: '', total: 0});
+  }
+
   setQuantity(event) {
     let total = this.props.stock.price * event.target.value;
     this.setState({quantity: event.target.value, total: total});
 
   }
+
   buyStock() {
     $.ajax({
       url: '/stocks',

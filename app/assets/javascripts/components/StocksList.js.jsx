@@ -6,7 +6,6 @@ class StocksList extends React.Component {
   }
 
   formattedTotal(stock) {
-    console.log(stock);
     return stock.total > 0 ? `R$${stock.total.toFixed(2)}` : `R$ 0.00`;
   }
 

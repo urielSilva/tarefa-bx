@@ -12,7 +12,11 @@ class StocksController < ApplicationController
   end
   def fetch_stock
     stock = StockFetcher.fetch(params[:code])
-    render json: {code: stock["t"], price: stock["l_fix"].to_f, price_formatted: stock["l_cur"]}
+    if stock
+      render json: {code: stock["t"], price: stock["l_fix"].to_f, price_formatted: stock["l_cur"]}
+    else
+      render json: {}, status: 422
+    end
   end
 
   private
