@@ -32,7 +32,7 @@ class App extends React.Component {
           {this.state.isStockVisible ?
             <StockInfo purchaseCallback={this.purchaseCallback} stock={this.state.stock}/> :
             <div className="ui info message">
-              <div className="header">Digite o código de uma ação para ver sua cotação.</div>
+              <div className="header">Type in a stock code in order to see its quote.</div>
             </div>
            }
           <StocksList stocks={this.state.stocksList} />
