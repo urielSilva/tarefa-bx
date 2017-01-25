@@ -2,14 +2,16 @@ class StocksController < ApplicationController
   require 'stock_fetcher'
 
   def index
-    render json: Stock.all
+    render json: Stock.all.order(:code)
   end
+
   def create
     stock = Stock.new(stock_params)
     if stock.save
       render json: Stock.all
     end
   end
+  
   def fetch_stock
     stock = StockFetcher.fetch(params[:code])
     if stock

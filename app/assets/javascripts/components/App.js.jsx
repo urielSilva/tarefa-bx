@@ -25,7 +25,6 @@ class App extends React.Component {
     this.setState({stocksList: stocksList});
   }
 
-
   render() {
     return (
         <div>
