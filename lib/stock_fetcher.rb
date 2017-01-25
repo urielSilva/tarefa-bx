@@ -7,11 +7,16 @@ class StockFetcher
   def self.fetch(code)
 
     uri = URI.parse("#{API_URL}#{code}")
+    Net::HTTP.new(uri.to_s).get2(uri, { 'User-Agent' => 'anything' } )
     req = Net::HTTP::Get.new(uri.to_s)
     req.add_field("User-Agent", "anything")
     res = Net::HTTP.new(uri.host, uri.port).start do |http|
       http.request(req)
     end
+    puts uri.path
+    puts req
+    puts uri.to_s
+    puts uri.host
     puts res.body
     puts res.code
     parse_response(res)
