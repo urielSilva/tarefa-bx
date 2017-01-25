@@ -9,7 +9,8 @@ class StockFetcher
     url = URI.parse("#{API_URL}#{code}")
     response =  Net::HTTP::get_response(url)
     #removing // from the response
-    puts response 
+    puts url
+    puts response
     parse_response(response)
 
   end
