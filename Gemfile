@@ -37,10 +37,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'react-rails'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
-gem 'byebug', platform: :mri
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-
+  gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
 end

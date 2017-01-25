@@ -7,10 +7,9 @@ class StockFetcher
   def self.fetch(code)
 
     url = URI.parse("#{API_URL}#{code}")
-    byebug
     response =  Net::HTTP::get_response(url)
     #removing // from the response
-
+    puts response 
     parse_response(response)
 
   end
