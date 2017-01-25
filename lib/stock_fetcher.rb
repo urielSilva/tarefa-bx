@@ -1,7 +1,6 @@
-
 class StockFetcher
   # endpoint URL
-  API_URL = "http://www.google.com/finance/info?q="
+  API_URL = "https://www.google.com/finance/info?q="
 
   def self.fetch(code)
     res = HTTP.get("#{API_URL}#{code}")
@@ -13,6 +12,7 @@ class StockFetcher
     # res = Net::HTTP.new(uri.host, uri.port).start do |http|
     #   http.request(req)
     # end
+    byebug
     puts "#{API_URL}#{code}"
     puts res.to_s
     puts res
