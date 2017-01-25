@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'http'
 
 gem 'react-rails'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
