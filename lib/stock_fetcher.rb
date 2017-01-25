@@ -12,6 +12,8 @@ class StockFetcher
     res = Net::HTTP.new(uri.host, uri.port).start do |http|
       http.request(req)
     end
+    puts res.body
+    puts res.code
     parse_response(res)
 
   end
