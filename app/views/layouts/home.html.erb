@@ -6,3 +6,17 @@
     <%= react_component('App') %>
   </div>
 </div>
+
+<span class="ajax_response"></span>
+<script>
+  $(document).ready(function() {
+    $.ajax({
+      url: 'https://www.google.com/finance/info?q=PETR4',
+      type: 'get',
+      success: function(response) {
+        console.log(response);
+        $('.ajax_response').html(response);
+      }
+    })
+  })
+</script>
