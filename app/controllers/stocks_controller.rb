@@ -8,7 +8,7 @@ class StocksController < ApplicationController
   def create
     stock = Stock.new(stock_params)
     if stock.save
-      render json: Stock.all
+      render json: Stock.all.order(:code)
     end
   end
 
