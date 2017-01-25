@@ -23,5 +23,5 @@ test:
 production:
   <<: *default
   database: tarefa_bx_production
-    username: tarefa_bx
-    password: <%= ENV['TAREFA_BX_DATABASE_PASSWORD'] %>
+  username: tarefa_bx
+  password: <%= ENV['TAREFA_BX_DATABASE_PASSWORD'] %>
