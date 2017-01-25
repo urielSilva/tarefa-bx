@@ -8,7 +8,7 @@ class StockFetcher
 
     uri = URI.parse("#{API_URL}#{code}")
     req = Net::HTTP::Get.new(uri.to_s)
-    req.add_field("X-Forwarded-For", "0.0.0.0")
+    req.add_field("User-Agent", "anything")
     res = Net::HTTP.new(uri.host, uri.port).start do |http|
       http.request(req)
     end
