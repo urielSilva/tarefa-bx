@@ -5,9 +5,12 @@ class StockFetcher
   API_URL = "https://www.google.com/finance/info?q="
 
   def self.fetch(code)
+
     url = URI.parse("#{API_URL}#{code}")
+    byebug
     response =  Net::HTTP::get_response(url)
     #removing // from the response
+
     parse_response(response)
 
   end
