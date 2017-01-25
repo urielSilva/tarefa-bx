@@ -13,6 +13,7 @@ class StockFetcher
     # res = Net::HTTP.new(uri.host, uri.port).start do |http|
     #   http.request(req)
     # end
+    puts "#{API_URL}#{code}"
     puts res.to_s
     puts res
     puts res.code
